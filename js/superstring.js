@@ -1,4 +1,10 @@
-
+/**
+ * Takes an array of character arrays, computes the shortest superstring between 
+ * the arrays and returns an array whose first element is an array of the shortest
+ * superstring characters.
+ * @param {Array} stringSegments
+ * @returns {Array}
+ */
 function getShortestCommonSuperString(stringSegments) {
     if (stringSegments.length <= 1) {
         return stringSegments;
@@ -35,6 +41,13 @@ function getShortestCommonSuperString(stringSegments) {
     return getShortestCommonSuperString(stringSegments);
 }
 
+/**
+ * Merges/Superimposes two segments
+ * @param {Array} firstSegment
+ * @param {Array} secondSegment
+ * @param {Array} match
+ * @returns {Array}
+ */
 function mergeSegments(firstSegment, secondSegment, match) {
     if (match.length === 0) {
         return firstSegment.concat(secondSegment);
@@ -50,6 +63,13 @@ function mergeSegments(firstSegment, secondSegment, match) {
     return (mergedSegment.length === 0) ? superimposePartiallyIntersectingSegments(secondSegment, firstSegment, match) : mergedSegment;
 }
 
+/**
+ * Superimposes partially overlapping/intersecting segments and returns the result
+ * @param {Array} firstSegment
+ * @param {Array} secondSegment
+ * @param {Array} match
+ * @returns {Array}
+ */
 function superimposePartiallyIntersectingSegments(firstSegment, secondSegment, match) {
     var superimposedSegment = [];
     var isSuperImposedSuccessfully = false;
@@ -71,6 +91,12 @@ function superimposePartiallyIntersectingSegments(firstSegment, secondSegment, m
     return isSuperImposedSuccessfully ? superimposedSegment : [];
 }
 
+/**
+ * Finds the overlapping segment between two segments 
+ * @param {Array} firstSegment
+ * @param {Array} secondSegment
+ * @returns {Array}
+ */
 function getOverlappingSegment(firstSegment, secondSegment) {
     var overlap = [];
     var consecutiveOverlap = [];
@@ -88,6 +114,14 @@ function getOverlappingSegment(firstSegment, secondSegment) {
     return overlap;
 }
 
+/**
+ * Validates if to arrays consecutively overlaps from the top till the end of 
+ * the shortest array. Returns the overlap if the arrays do consecutively overlap
+ * or else returns and empty array
+ * @param {Array} largerArray
+ * @param {Array} smallerArray
+ * @returns {Array}
+ */
 function getConsecutiveOverlap(largerArray, smallerArray) {
     if (largerArray.length < smallerArray.length) {
         return [];
@@ -100,6 +134,12 @@ function getConsecutiveOverlap(largerArray, smallerArray) {
     return smallerArray;
 }
 
+/**
+ * Validates if two arrays have the same set of values
+ * @param {Array} firstArray
+ * @param {Array} secondArray
+ * @returns {Boolean}
+ */
 function arraysEqual(firstArray, secondArray) {
     if (firstArray.length !== secondArray.length) {
         return false;
