@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Superstring Algorithm</title>
+        <link href="css/materialize/materialize.min.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="col s12 m12 l12">
+                <div class="card large-12 grey lighten-5">
+                    <div class="card-content black-text">
+                        <span class="card-title">Specify your text fragments</span>
+                        <div class="row">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Add your strings here..." id="substring" name="substring" type="text">
+                                    <label for="substring">Text Fragment</label>
+                                </div>
+                            </div>
+                            <a id="addSubstring" class="waves-effect waves-light btn">Add Text To List</a>
+                            <a id="clearSubstrings" class="waves-effect waves-light btn">Clear Text Fragments</a>
+                            <a id="computeSuperstring" class="waves-effect waves-light btn">Compute Superstring</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container superstring-display" style="display:none;">
+            <div class="col s12 m12 l12">
+                <div class="card large-12 grey lighten-5">
+                    <div class="card-content black-text">
+                        <table id="superstringContent" class="centered responsive-table highlight">
+                            <thead>
+                                <tr>
+                                    <th>Shortest Common Superstring</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="superstring">No records found</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container l12 client-table-container">
+            <div class="card large-12 grey lighten-5">
+                <table id="client_data" class="centered responsive-table highlight">
+                    <thead>
+                        <tr>
+                            <th>Specified Text Fragments</th>
+                        </tr>
+                    </thead>
+                    <tbody id="substringContent"></tbody>
+                </table>
+            </div>
+        </div>
+        <script src="js/jquery/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize/materialize.min.js"></script>
+        <script src="js/superstring.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

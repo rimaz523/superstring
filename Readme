@@ -1,0 +1,19 @@
+Overview
+---------
+This is an implementation for finding the Shortest Common Superstring for a set 
+of substrings using greed match and merge.
+
+To look at how things work, simply open up index.html and start adding your text
+fragments. Once you are done with adding the strings, click on "Compute Superstring"
+to find the shortest common superstring for your text fragments.
+
+Set up instructions
+-------------------
+Clone this project to your web root directory. Then access it in your browser
+as localhost/<app-root>
+(alternatively you can simply clone it to any directory of your choice, 
+right-click on index.html and open with your preferred browser as this is written
+using vanilla javascript & html.)
+
+Note : you can view the QUnit tests written for the superstring algorigthm by 
+opening/accessing tests.html.
